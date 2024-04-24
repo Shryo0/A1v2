@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import useStore from './components/useStore';
+import Link from 'next/link';
 
 const AppPage: React.FC = () => {
   const [newTaskName, setNewTaskName] = useState('');
@@ -21,6 +22,9 @@ const AppPage: React.FC = () => {
 
   return (
     <div>
+      <li>
+      <Link href="/conf">configuração</Link>
+      </li>
       <h1>Lista de Tarefas</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -44,6 +48,7 @@ const AppPage: React.FC = () => {
             </span>
             <button onClick={() => useStore.getState().deleteTask(task.id)}>Excluir</button>
           </li>
+          
         ))}
       </ul>
     </div>

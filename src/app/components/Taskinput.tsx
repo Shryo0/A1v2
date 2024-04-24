@@ -13,7 +13,7 @@ const TaskInput: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (taskName.trim() !== '') {
-      console.log("Adding task:", taskName); // Adicionando console.log para verificar se a função está sendo chamada
+      console.log("Adding task:", taskName); 
       addTask(taskName);
       setTaskName('');
     }

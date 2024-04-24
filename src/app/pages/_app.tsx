@@ -1,5 +1,7 @@
 import React from 'react';
 import Page from '../page'; 
+import Link from 'next/link';
+
 
 const MyApp = () => {
   return <Page />;

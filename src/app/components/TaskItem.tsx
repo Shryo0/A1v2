@@ -5,7 +5,7 @@ interface TaskItemProps {
   id: string;
   name: string;
   completed: boolean;
-  toggleTask: (id: string) => void; // Adicione a propriedade toggleTask à interface
+  toggleTask: (id: string) => void; 
   deleteTask: (id: string) => void;
 }
 

@@ -1,6 +1,6 @@
 'use client'
-
 import create from 'zustand';
+
 
 interface Task {
   id: string;
@@ -15,19 +15,7 @@ interface TaskStore {
   deleteTask: (id: string) => void;
 }
 
-interface SettingsState {
-  theme: string;
-  language: string;
-  readingMode: boolean;
-}
-
-interface SettingsStore extends SettingsState {
-  changeTheme: (theme: string) => void;
-  changeLanguage: (language: string) => void;
-  toggleReadingMode: () => void;
-}
-
-const useStore = create<TaskStore & SettingsStore>((set, get) => ({
+const useStore = create<TaskStore>((set, get) => ({
   tasks: [],
   addTask: (name: string) => {
     const newTask: Task = {
@@ -49,12 +37,6 @@ const useStore = create<TaskStore & SettingsStore>((set, get) => ({
       tasks: state.tasks.filter(task => task.id !== id),
     }));
   },
-  theme: 'light',
-  language: 'en',
-  readingMode: false,
-  changeTheme: (theme: string) => set({ theme }),
-  changeLanguage: (language: string) => set({ language }),
-  toggleReadingMode: () => set(state => ({ readingMode: !state.readingMode })),
 }));
 
 export default useStore;
