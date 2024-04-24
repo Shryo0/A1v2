@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-// Defina a fonte Inter para uso global
+// Define a fonte Inter para uso global
 const inter = Inter({ subsets: ['latin'] })
 
 // Metadados da aplicação
@@ -27,7 +27,7 @@ export default function Layout({
       </head>
       <body className={inter.className}>
         <header style={{ backgroundColor: '#333', color: '#fff', padding: '20px' }}>
-       
+          {/* Adicione conteúdo do cabeçalho aqui */}
         </header>
         <main style={{ padding: '20px' }}>
           {children}

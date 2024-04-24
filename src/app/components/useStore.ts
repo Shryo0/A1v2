@@ -1,13 +1,15 @@
+// Importa a função create do Zustand para criar o estado global da aplicação
 'use client'
 import create from 'zustand';
 
-
+// Define a interface da tarefa
 interface Task {
   id: string;
   name: string;
   completed: boolean;
 }
 
+// Define a interface do estado global
 interface TaskStore {
   tasks: Task[];
   addTask: (name: string) => void;
@@ -15,6 +17,7 @@ interface TaskStore {
   deleteTask: (id: string) => void;
 }
 
+// Cria o estado global da aplicação com Zustand
 const useStore = create<TaskStore>((set, get) => ({
   tasks: [],
   addTask: (name: string) => {
